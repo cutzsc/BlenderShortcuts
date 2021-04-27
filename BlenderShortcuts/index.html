@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="blenderApp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blender</title>
+<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/docs.min.css">
+<link rel="stylesheet" href="assets/css/other.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="assets/js/docs.min.js"></script>
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="scripts/data.js"></script>
+<script src="scripts/main.js"></script>
+<style>
+	body {
+		font-size: 17px;
+	}
+</style>
+</head>
+<body ng-controller="blenderController">
+<div class="bs-docs-header">
+	<div class="container">
+		<h1>Blender</h1>
+		<p>Shortcuts, hotkeys.</p>
+	</div>
+</div>
+<div class="container bs-docs-container">
+	<div class="row">
+		<div class="col-md-9">
+			<section class="bs-docs-section" ng-repeat="category in data.categories">
+				<h1 class="page-header" id="{{category.hlink}}">{{category.hline}}</h1>
+				<article ng-repeat="content in category.contents">
+					<h3 id="{{content.tlink}}">{{content.tline}}</h3>
+					<img class="img-responsive img-thumbnail" src="images/{{content.imgsrc}}" style="margin-bottom: 10px;">
+					<p>{{content.description}}</p>
+				</article>
+			</section>
+		</div>
+		<div class="col-md-3">
+			<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs affix-top">
+				<ul class="bs-docs-sidenav nav">
+					<li ng-repeat="category in data.categories">
+						<a href="#{{category.hlink}}">{{category.hline}}</a>
+						<ul class="nav">
+							<li ng-repeat="content in category.contents"><a href="#{{content.tlink}}">{{content.tline}}</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="bs-docs-footer">
+	<div class="container">
+		<ul class="bs-docs-footer-links">
+			<li>
+				<a href="https://www.youtube.com/channel/UCyu4kn_ROhA34jug2g_AwJA" target="_blank">Darrin Lile</a>
+			</li>
+			<li>
+				<a href="https://www.youtube.com/channel/UCzn6bZDvqCnmpLagUWlhwng" target="_blank">stym</a>
+			</li>
+			<li>
+				<a href="https://www.youtube.com/channel/UCOKHwx1VCdgnxwbjyb9Iu1g" target="_blank">Blender Guru</a>
+			</li>
+		</ul>
+	</div>
+</footer>
+</body>
+</html>

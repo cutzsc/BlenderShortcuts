@@ -1,0 +1,6 @@
+перещитать нормали ctrl+m
+применить rotation scale ctrl+a (apply rotation and scale) в object mode
+n, t скрыть показать элементы интерфейса
+Modifier boolean operations
+Modifier mirror
+Пропорциональное изменение
